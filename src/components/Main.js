@@ -1,12 +1,12 @@
 import React from "react";
-import Country from "./CountryCard";
+import CountryCard from "./CountryCard";
 
 // import countries from "../fakeData";
 
 const Main = (props) => {
   const displayCountries = () => {
     return props.countries.map((country) => {
-      return <Country key={country.name} country={country} />;
+      return <CountryCard key={country.name} country={country} />;
     });
   };
   return (

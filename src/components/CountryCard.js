@@ -2,15 +2,21 @@ import React from "react";
 
 const CountryCard = ({ country }) => {
   return (
-    <div>
-      <div>
-        <img src={country.flag} alt="country Flag" />
+    <div className="country">
+      <div className="country-flag">
+        <img src={country.flag} alt="country Flag" className="country-img" />
       </div>
-      <div>
-        <p>{country.name}</p>
-        <p>Population: {country.population}</p>
-        <p>Region: {country.region}</p>
-        <p>Capital: {country.capital}</p>
+      <div className="country__info">
+        <p className="country-name">{country.name}</p>
+        <p className="country__info-p">
+          <strong>Population:</strong> {country.population}
+        </p>
+        <p className="country__info-p">
+          <strong>Region:</strong> {country.region}
+        </p>
+        <p className="country__info-p">
+          <strong>Capital:</strong> {country.capital}
+        </p>
       </div>
     </div>
   );
