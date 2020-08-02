@@ -1,7 +1,14 @@
 import React from "react";
-import countries from "../fakeData";
+import Country from "./CountryCard";
 
-const Main = () => {
+// import countries from "../fakeData";
+
+const Main = (props) => {
+  const displayCountries = () => {
+    return props.countries.map((country) => {
+      return <Country key={country.name} country={country} />;
+    });
+  };
   return (
     <main>
       <section>
@@ -9,8 +16,8 @@ const Main = () => {
           type="text"
           name="country"
           placeholder="Search for a country ..."
-          // value={""}
-          // onChange={""}
+          value={props.country}
+          onChange={props.handleChange}
         />
         <input
           type="text"
@@ -20,23 +27,7 @@ const Main = () => {
           // onChange={""}
         />
       </section>
-      <section className="countries">
-        {countries.map((country) => {
-          return (
-            <div key={country.name}>
-              <div>
-                <img src={country.flag} alt="country Flag" />
-              </div>
-              <div>
-                <p>{country.name}</p>
-                <p>Population: {country.population}</p>
-                <p>Region: {country.region}</p>
-                <p>Capital: {country.capital}</p>
-              </div>
-            </div>
-          );
-        })}
-      </section>
+      <section className="countries">{displayCountries()}</section>
     </main>
   );
 };
