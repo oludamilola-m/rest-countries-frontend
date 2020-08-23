@@ -1,0 +1,40 @@
+.country-detail {
+  padding: 50px 50px;
+
+  .country__info {
+    padding: 0;
+    display: flex;
+    margin-top: 50px;
+
+    div {
+      flex: 1;
+    }
+  }
+}
+
+.country__flag {
+  width: 35%;
+}
+
+.backBtn {
+  padding: 5px 35px;
+}
+
+@media (max-width: 768px) {
+  .country-detail {
+    padding: 50px 25px;
+
+    .country__info {
+      flex-wrap: wrap;
+
+      div {
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  .country__flag {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+}
