@@ -6,21 +6,83 @@
     display: flex;
     margin-top: 50px;
 
-    div {
+    &__item {
       flex: 1;
     }
   }
 }
 
 .country__flag {
-  width: 35%;
+  width: 90%;
+}
+
+.country__info__item:nth-child(2) {
+  margin-left: 30px;
 }
 
 .backBtn {
+  background-color: #fff;
+  border: 1px solid white;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+  -moz-box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+  box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+  outline: none;
   padding: 5px 35px;
 }
 
+.detailed-information {
+  display: flex;
+  padding-top: 30px;
+
+  &__item {
+    flex: 1;
+  }
+}
+
+.detailed-information h4 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.detailed-information p {
+  padding-bottom: 10px;
+}
+
+.detailed-information span {
+  font-weight: 700;
+}
+
+.additional-information {
+  padding-top: 50px;
+}
+
+.border-countries {
+  margin-top: 70px;
+
+  p {
+    display: inline;
+    font-weight: 700;
+  }
+
+  span {
+    background-color: #fff;
+    border: 1px solid white;
+    border-radius: 4px;
+    -webkit-box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+    -moz-box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+    box-shadow: 2px 7px 18px -3px rgba(161, 161, 161, 1);
+    margin-left: 10px;
+    outline: none;
+    padding: 5px 10px;
+  }
+}
+
 @media (max-width: 768px) {
+  .country__info__item:nth-child(2) {
+    margin-left: 0;
+  }
+
   .country-detail {
     padding: 50px 25px;
 
@@ -36,5 +98,19 @@
   .country__flag {
     margin-bottom: 40px;
     width: 100%;
+  }
+
+  .detailed-information {
+    flex-wrap: wrap;
+  }
+
+  .border-countries {
+    p {
+      display: block;
+      margin-bottom: 20px;
+    }
+    span:nth-of-type(1) {
+      margin-left: 0;
+    }
   }
 }

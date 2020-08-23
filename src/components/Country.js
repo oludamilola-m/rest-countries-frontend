@@ -4,43 +4,78 @@ import { useParams, Link } from "react-router-dom";
 
 const Country = () => {
   const [country, setCountry] = useState({});
-  const { name } = useParams();
+  const { code } = useParams();
   useEffect(() => {
-    axios
-      .get(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
-      .then((res) => {
-        console.log(res);
-        setCountry(res.data[0]);
-      });
-  }, []);
+    axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`).then((res) => {
+      console.log(res);
+      setCountry(res.data);
+    });
+  }, [code]);
   return (
     <div className="country-detail">
       <Link to="/">
         <button className="backBtn">Back</button>
       </Link>
-      <div className="country__info">
-        <div>
-          <img
-            src="https://restcountries.eu/data/ala.svg"
-            alt="country Flag"
-            className="country__flag"
-          />
-        </div>
-        <div>
-          <div>
-            <h4>Nigeria</h4>
-            <p>Population: 1000000</p>
-            <p>Region: Africa</p>
-            <p>Sub-Region: Africa</p>
-            <p>Capital: Abuja</p>
+      {country.name && (
+        <div className="country__info">
+          <div className="country__info__item">
+            <img
+              src={country.flag}
+              alt="country Flag"
+              className="country__flag"
+            />
           </div>
-          <div>
-            <p>Top Level Domain: be</p>
-            <p>Currencies: Naira</p>
-            <p>Languages: Yoruba, Igbo, Hausa</p>
+          <div className="country__info__item">
+            <div className="detailed-information">
+              <div className="detailed-information__item">
+                <h4>
+                  <strong>{country.name}</strong>
+                </h4>
+                <p>
+                  <span>Native name: </span> {country.nativeName}
+                </p>
+                <p>
+                  <span>Population: </span> {country.population}
+                </p>
+                <p>
+                  <span>Region: </span> {country.region}
+                </p>
+                <p>
+                  <span>Sub-Region: </span>
+                  {country.subregion}
+                </p>
+                <p>
+                  <span>Capital: </span> {country.capital}
+                </p>
+              </div>
+              <div className="additional-information detailed-information__item">
+                <p>
+                  <span>Top Level Domain: </span> {country.topLevelDomain}
+                </p>
+                <p>
+                  <span>Currencies:</span> {country.currencies[0].name}
+                </p>
+                <p>
+                  <span>Languages:</span>{" "}
+                  {country.languages
+                    .map((language) => language.name)
+                    .join(", ")}
+                </p>
+              </div>
+            </div>
+            <div className="border-countries">
+              <p>Border Countries: </p>
+              {country.borders.map((border) => {
+                return (
+                  <Link to={`/${border}`}>
+                    <span key={border}>{border}</span>
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -15,7 +15,7 @@ class App extends Component {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route exact path="/:name">
+          <Route exact path="/:code">
             <Country />
           </Route>
         </Switch>
