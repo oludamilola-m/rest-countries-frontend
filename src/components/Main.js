@@ -11,21 +11,27 @@ const Main = (props) => {
   };
   return (
     <main>
-      <section>
+      <section className="inputText">
         <input
           type="text"
           name="country"
           placeholder="Search for a country ..."
-          value={props.country}
           onChange={props.handleChange}
+          className="inputText--country"
         />
-        <input
-          type="text"
+
+        <select
           name="region"
-          placeholder="Filter by region"
-          // value={""}
-          // onChange={""}
-        />
+          onChange={props.filterByRegion}
+          className="inputText--region "
+        >
+          <option>Filter by region</option>
+          <option value="africa">Africa</option>
+          <option value="america">America</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="oceania">Oceania</option>
+        </select>
       </section>
       <section className="countries">{displayCountries()}</section>
     </main>

@@ -15,9 +15,9 @@
 
 .countries {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 4em;
-  padding: 1em;
+  padding: 2.5em;
   row-gap: 3.5em;
 }
 
@@ -29,4 +29,32 @@
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.inputText {
+  padding: 2.5em;
+}
+
+.inputText--country {
+  background-color: #fff;
+  border: 1px solid white;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  outline: none;
+  padding: 15px 0 15px 43px;
+  width: 30%;
+}
+
+.inputText--region {
+  background-color: white;
+  border: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  float: right;
+  outline: none;
+  padding: 15px;
 }

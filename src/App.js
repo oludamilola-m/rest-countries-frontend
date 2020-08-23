@@ -8,7 +8,6 @@ import "./App.scss";
 class App extends Component {
   state = {
     countries: [],
-    country: "",
   };
 
   componentDidMount() {
@@ -28,6 +27,17 @@ class App extends Component {
     });
   };
 
+  filterByRegion = (e) => {
+    const { value } = e.target;
+
+    axios
+      .get(`https://restcountries.eu/rest/v2/region/${value}`)
+      .then((res) => {
+        const countries = res.data;
+        this.setState({ countries: countries });
+      });
+  };
+
   render() {
     return (
       <Fragment>
@@ -36,6 +46,8 @@ class App extends Component {
           countries={this.state.countries}
           country={this.state.country}
           handleChange={this.handleChange}
+          region={this.state.region}
+          filterByRegion={this.filterByRegion}
         />
       </Fragment>
     );
