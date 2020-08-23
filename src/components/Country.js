@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import NumberFormat from "react-number-format";
 
 const Country = () => {
   const [country, setCountry] = useState({});
@@ -35,7 +36,12 @@ const Country = () => {
                   <span>Native name: </span> {country.nativeName}
                 </p>
                 <p>
-                  <span>Population: </span> {country.population}
+                  <span>Population: </span>{" "}
+                  <NumberFormat
+                    value={country.population}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
                 </p>
                 <p>
                   <span>Region: </span> {country.region}
@@ -67,8 +73,8 @@ const Country = () => {
               <p>Border Countries: </p>
               {country.borders.map((border) => {
                 return (
-                  <Link to={`/${border}`}>
-                    <span key={border}>{border}</span>
+                  <Link to={`/${border}`} key={border}>
+                    <span>{border}</span>
                   </Link>
                 );
               })}
