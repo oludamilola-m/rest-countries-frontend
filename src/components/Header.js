@@ -1,10 +1,25 @@
 import React from "react";
 
-const Header = () => {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+const Header = ({ toggleTheme, theme }) => {
   return (
-    <header>
+    <header className={theme}>
       <h2 className="world">Where in the world?</h2>
-      <span>Dark Mode</span>
+      <div onClick={toggleTheme}>
+        {theme === "dark" && (
+          <React.Fragment>
+            <FontAwesomeIcon icon="moon" />
+            <span> Dark Mode</span>
+          </React.Fragment>
+        )}
+        {theme === "light" && (
+          <React.Fragment>
+            <FontAwesomeIcon icon={["far", "moon"]} />
+            <span> Light Mode</span>
+          </React.Fragment>
+        )}
+      </div>
     </header>
   );
 };

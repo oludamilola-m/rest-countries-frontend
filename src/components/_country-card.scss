@@ -1,6 +1,4 @@
 .country {
-  background-color: #fff;
-
   &__info {
     padding: 10px 0 10px 20px;
     width: 100%;
@@ -38,7 +36,7 @@
 }
 
 .inputText--country {
-  background-color: #fff;
+  // background-color: #fff;
   border: 1px solid white;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -50,7 +48,7 @@
 }
 
 .inputText--region {
-  background-color: white;
+  // background-color: white;
   border: none;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),

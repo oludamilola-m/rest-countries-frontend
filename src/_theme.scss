@@ -1,0 +1,47 @@
+$dark-primary-bg-color: hsl(207, 26%, 17%);
+$dark-secondary-bg-color: hsl(209, 23%, 22%);
+
+$light-primary-bg-color: hsl(0, 0%, 98%);
+$light-secondary-bg-color: #fff;
+
+.dark {
+  .country {
+    color: #fff;
+    background-color: $dark-secondary-bg-color;
+  }
+
+  input,
+  select,
+  button {
+    color: #fff;
+    background-color: $dark-primary-bg-color;
+    border-color: $dark-primary-bg-color;
+  }
+
+  button {
+    box-shadow: 2px 7px 18px -3px #0e0c0c;
+  }
+
+  input::placeholder {
+    color: #fff;
+  }
+
+  .border-countries {
+    span {
+      border-color: $dark-primary-bg-color;
+      background-color: $dark-primary-bg-color;
+      box-shadow: 2px 7px 18px -3px #0e0c0c;
+    }
+  }
+}
+
+header.dark {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
+
+main.dark,
+.country-detail.dark {
+  background-color: hsl(207, 26%, 17%);
+  color: #fff;
+}

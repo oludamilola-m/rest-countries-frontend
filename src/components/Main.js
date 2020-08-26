@@ -4,7 +4,7 @@ import CountryCard from "./CountryCard";
 
 // import countries from "../fakeData";
 
-const Main = () => {
+const Main = ({ theme }) => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Main = () => {
     });
   };
   return (
-    <main>
+    <main className={theme}>
       <section className="inputText">
         <input
           type="text"

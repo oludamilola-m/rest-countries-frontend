@@ -3,17 +3,16 @@ import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import NumberFormat from "react-number-format";
 
-const Country = () => {
+const Country = ({ theme }) => {
   const [country, setCountry] = useState({});
   const { code } = useParams();
   useEffect(() => {
     axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`).then((res) => {
-      console.log(res);
       setCountry(res.data);
     });
   }, [code]);
   return (
-    <div className="country-detail">
+    <div className={`country-detail ${theme}`}>
       <Link to="/">
         <button className="backBtn">Back</button>
       </Link>
