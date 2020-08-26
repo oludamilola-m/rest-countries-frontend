@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
 import NumberFormat from "react-number-format";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Country = ({ theme }) => {
   const [country, setCountry] = useState({});
@@ -14,7 +15,10 @@ const Country = ({ theme }) => {
   return (
     <div className={`country-detail ${theme}`}>
       <Link to="/">
-        <button className="backBtn">Back</button>
+        <button className="backBtn">
+          <FontAwesomeIcon icon="arrow-left" />
+          <span style={{ marginLeft: "5px" }}>Back</span>
+        </button>
       </Link>
       {country.name && (
         <div className="country__info">

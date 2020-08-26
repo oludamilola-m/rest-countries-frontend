@@ -6,7 +6,7 @@ const Header = ({ toggleTheme, theme }) => {
   return (
     <header className={theme}>
       <h2 className="world">Where in the world?</h2>
-      <div onClick={toggleTheme}>
+      <div className="toggle-theme" onClick={toggleTheme}>
         {theme === "dark" && (
           <React.Fragment>
             <FontAwesomeIcon icon="moon" />
