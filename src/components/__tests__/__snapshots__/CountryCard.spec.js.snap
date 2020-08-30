@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<a
+  href="/undefined"
+  onClick={[Function]}
+>
+  <div
+    className="country"
+  >
+    <div
+      className="country-flag"
+    >
+      <img
+        alt="country Flag"
+        className="country-img"
+        data-testid="country-flag"
+        src="https://restcountries.eu/data/dza.svg"
+      />
+    </div>
+    <div
+      className="country__info"
+    >
+      <p
+        className="country-name"
+        data-testid="country-name"
+      >
+        Nigeria
+      </p>
+      <p
+        className="country__info-p"
+        data-testid="country-population"
+      >
+        <strong>
+          Population:
+        </strong>
+         
+        1000000
+      </p>
+      <p
+        className="country__info-p"
+        data-testid="country-region"
+      >
+        <strong>
+          Region:
+        </strong>
+         
+        Africa
+      </p>
+      <p
+        className="country__info-p"
+        data-testid="country-capital"
+      >
+        <strong>
+          Capital:
+        </strong>
+         
+        Abuja
+      </p>
+    </div>
+  </div>
+</a>
+`;
