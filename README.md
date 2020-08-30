@@ -1,4 +1,4 @@
-https://github.com/oludamilola-m/rest-countries-frontend/workflows/Node.js CI/badge.svg
+https://github.com/oludamilola-m/rest-countries-frontend/workflows/Node.js+CI/badge.svg
   
   
   
