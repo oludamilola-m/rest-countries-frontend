@@ -1,6 +1,6 @@
 ![Node.js CI](https://github.com/oludamilola-m/rest-countries-frontend/workflows/Node.js%20CI/badge.svg?branch=master)
 
-# Frontend Mentor Challenge- REST Countries API with color theme switcher
+# Frontend Mentor Challenge- REST Countries Frontend with color theme switcher
 
 ## About
 
