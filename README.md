@@ -4,9 +4,7 @@
 
 ## About
 
-Front end application built using react that pulls countries and displays countries using [REST Countries API](https://restcountries.eu).
-
-You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
+Front end application built using [React](https://reactjs.org) that pulls countries and displays countries using [REST Countries API](https://restcountries.eu). Styling is done using scss and API communication is done with [Axios](https://github.com/axios/axios).
 
 ### Features
 
@@ -19,6 +17,24 @@ You can use any JavaScript framework/library on the front-end such as [React](ht
 ### Deployement
 
 Deployed using Netlify [Here](https://cocky-mcnulty-0c1248.netlify.app/)
+
+### Dependencies
+
+- [axios](https://github.com/axios/axios)
+
+- [node-sass](https://www.npmjs.com/package/node-sass)
+
+- [react tesing library](https://github.com/testing-library/react-testing-library)
+
+- [cypress](https://github.com/cypress-io/cypress)
+
+### Testing
+
+Testing is done using a combination of jest, react testing library, reat test renderer and cypress.
+
+To run tests
+
+`npm test`
 
 ## Inspiration
 
