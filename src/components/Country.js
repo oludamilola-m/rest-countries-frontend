@@ -27,18 +27,19 @@ const Country = ({ theme }) => {
               src={country.flag}
               alt="country Flag"
               className="country__flag"
+              data-testid="country-flag"
             />
           </div>
           <div className="country__info__item">
             <div className="detailed-information">
               <div className="detailed-information__item">
-                <h4>
+                <h4 data-testid="country-name">
                   <strong>{country.name}</strong>
                 </h4>
-                <p>
+                <p data-testid="country-native-name">
                   <span>Native name: </span> {country.nativeName}
                 </p>
-                <p>
+                <p data-testid="country-population">
                   <span>Population: </span>{" "}
                   <NumberFormat
                     value={country.population}
@@ -46,25 +47,25 @@ const Country = ({ theme }) => {
                     thousandSeparator={true}
                   />
                 </p>
-                <p>
+                <p data-testid="country-region">
                   <span>Region: </span> {country.region}
                 </p>
-                <p>
+                <p data-testid="country-sub-region">
                   <span>Sub-Region: </span>
                   {country.subregion}
                 </p>
-                <p>
+                <p data-testid="country-capital">
                   <span>Capital: </span> {country.capital}
                 </p>
               </div>
               <div className="additional-information detailed-information__item">
-                <p>
+                <p data-testid="country-top-level-domain">
                   <span>Top Level Domain: </span> {country.topLevelDomain}
                 </p>
-                <p>
+                <p data-testid="country-currencies">
                   <span>Currencies:</span> {country.currencies[0].name}
                 </p>
-                <p>
+                <p data-testid="country-languages">
                   <span>Languages:</span>{" "}
                   {country.languages
                     .map((language) => language.name)
@@ -72,7 +73,7 @@ const Country = ({ theme }) => {
                 </p>
               </div>
             </div>
-            <div className="border-countries">
+            <div className="border-countries" data-testid="country-borders">
               <p>Border Countries: </p>
               {country.borders.map((border) => {
                 return (

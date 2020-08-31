@@ -2,7 +2,7 @@ import React from "react";
 import CountryCard from "../CountryCard";
 import ReactDOM from "react-dom";
 import renderer from "react-test-renderer";
-import { render, cleanup, fireEvent } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
 afterEach(cleanup);
