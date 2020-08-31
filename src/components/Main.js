@@ -6,6 +6,7 @@ import CountryCard from "./CountryCard";
 
 const Main = ({ theme }) => {
   const [countries, setCountries] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios.get(`https://restcountries.eu/rest/v2/all`).then((res) => {
@@ -16,11 +17,19 @@ const Main = ({ theme }) => {
 
   const handleChange = (e) => {
     const { value } = e.target;
+    setError(false);
 
-    axios.get(`https://restcountries.eu/rest/v2/name/${value}`).then((res) => {
-      const countries = res.data;
-      setCountries(countries);
-    });
+    axios
+      .get(`https://restcountries.eu/rest/v2/name/${value}`)
+      .then((res) => {
+        const countries = res.data;
+        setCountries(countries);
+      })
+      .catch((err) => {
+        if (value !== "") {
+          setError(true);
+        }
+      });
   };
 
   const filterByRegion = (e) => {
@@ -35,6 +44,9 @@ const Main = ({ theme }) => {
   };
 
   const displayCountries = () => {
+    if (error) {
+      return <h4>No result found</h4>;
+    }
     return countries.map((country) => {
       return <CountryCard key={country.name} country={country} />;
     });
