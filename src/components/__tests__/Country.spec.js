@@ -2,15 +2,8 @@ import React from "react";
 import Country from "../Country";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import {
-  render,
-  cleanup,
-  waitForElement,
-  act,
-  screen,
-  waitFor,
-} from "@testing-library/react";
-//import renderer from "react-test-renderer";
+import { render, cleanup, act, screen } from "@testing-library/react";
+
 const axios = require("axios");
 
 afterEach(cleanup);
