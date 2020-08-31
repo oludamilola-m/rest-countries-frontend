@@ -17,18 +17,23 @@ const Main = ({ theme }) => {
 
   const handleChange = (e) => {
     const { value } = e.target;
+    let url;
+    if (value === "") {
+      url = "https://restcountries.eu/rest/v2/all";
+    } else {
+      url = `https://restcountries.eu/rest/v2/name/${value}`;
+    }
+
     setError(false);
 
     axios
-      .get(`https://restcountries.eu/rest/v2/name/${value}`)
+      .get(url)
       .then((res) => {
         const countries = res.data;
         setCountries(countries);
       })
-      .catch((err) => {
-        if (value !== "") {
-          setError(true);
-        }
+      .catch(() => {
+        setError(true);
       });
   };
 
