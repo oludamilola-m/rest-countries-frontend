@@ -10,6 +10,7 @@ const Main = ({ theme }) => {
 
   useEffect(() => {
     axios.get(`https://restcountries.eu/rest/v2/all`).then((res) => {
+      console.log(res);
       const countries = res.data;
       setCountries(countries);
     });
@@ -49,7 +50,7 @@ const Main = ({ theme }) => {
   };
 
   const displayCountries = () => {
-    if (error) {
+    if (error || countries.length === 0) {
       return <h4>No result found</h4>;
     }
     return countries.map((country) => {
