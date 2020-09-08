@@ -34,5 +34,8 @@ describe("The Home page", () => {
     cy.get(".country").should("have.length", 2);
     cy.get(".country").first().should("contain", "Afghanistan");
     cy.get(".country").eq(1).should("contain", "Åland Islands");
+
+    cy.get(".country").first().click();
+    cy.url().should("eq", "http://localhost:3000/AFG");
   });
 });
