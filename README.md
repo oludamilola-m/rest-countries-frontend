@@ -30,7 +30,7 @@ Deployed using Netlify [Here](https://cocky-mcnulty-0c1248.netlify.app/)
 
 ### Testing
 
-Testing is done using a combination of jest, react testing library, reat test renderer and cypress.
+Testing is done using a combination of jest, react testing library, react test renderer and cypress.
 
 To run tests
 
