@@ -2,6 +2,9 @@
 
 # Frontend Mentor Challenge- REST Countries Frontend with color theme switcher
 
+## Live URL
+https://cocky-mcnulty-0c1248.netlify.app
+
 ## About
 
 Front end application built using [React](https://reactjs.org) that pulls countries and displays countries using [REST Countries API](https://restcountries.eu). Styling is done using scss and API communication is done with [Axios](https://github.com/axios/axios).
