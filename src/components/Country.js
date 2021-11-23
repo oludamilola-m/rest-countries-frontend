@@ -9,6 +9,7 @@ const Country = ({ theme }) => {
   const { code } = useParams();
   useEffect(() => {
     axios.get(`https://restcountries.com/v2/alpha/${code}`).then((res) => {
+      console.log(res);
       setCountry(res.data);
     });
   }, [code]);
@@ -75,13 +76,14 @@ const Country = ({ theme }) => {
             </div>
             <div className="border-countries" data-testid="country-borders">
               <p>Border Countries: </p>
-              {country.borders.map((border) => {
-                return (
-                  <Link to={`/${border}`} key={border}>
-                    <span>{border}</span>
-                  </Link>
-                );
-              })}
+              {country.borders &&
+                country.borders.map((border) => {
+                  return (
+                    <Link to={`/${border}`} key={border}>
+                      <span>{border}</span>
+                    </Link>
+                  );
+                })}
             </div>
           </div>
         </div>
