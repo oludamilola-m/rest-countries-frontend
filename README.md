@@ -22,7 +22,7 @@ Deployed using Netlify [Here](https://cocky-mcnulty-0c1248.netlify.app/)
 
 - [axios](https://github.com/axios/axios)
 
-- [node-sass](https://www.npmjs.com/package/node-sass)
+- [sass](https://www.npmjs.com/package/sass)
 
 - [react tesing library](https://github.com/testing-library/react-testing-library)
 
