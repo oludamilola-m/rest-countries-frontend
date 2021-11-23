@@ -5,7 +5,7 @@ describe("The Home page", () => {
     cy.server(); //cypress server
     //configure fake Api endpoint
     cy.route({
-      url: "https://restcountries.eu/rest/v2/all",
+      url: "https://restcountries.com/v2/all",
       method: "GET",
       response: [
         {

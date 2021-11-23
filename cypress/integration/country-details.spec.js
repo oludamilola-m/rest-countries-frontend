@@ -3,7 +3,7 @@ describe("viewing country details", () => {
     cy.server(); //cypress server
     //configure fake Api endpoint
     cy.route({
-      url: "https://restcountries.eu/rest/v2/alpha/AFG",
+      url: "https://restcountries.com/v2/alpha/AFG",
       method: "GET",
       response: {
         name: "Afghanistan",

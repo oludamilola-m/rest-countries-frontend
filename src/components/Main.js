@@ -9,7 +9,7 @@ const Main = ({ theme }) => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios.get(`https://restcountries.eu/rest/v2/all`).then((res) => {
+    axios.get(`https://restcountries.com/v2/all`).then((res) => {
       console.log(res);
       const countries = res.data;
       setCountries(countries);
@@ -20,9 +20,9 @@ const Main = ({ theme }) => {
     const { value } = e.target;
     let url;
     if (value === "") {
-      url = "https://restcountries.eu/rest/v2/all";
+      url = "https://restcountries.com/v2/all";
     } else {
-      url = `https://restcountries.eu/rest/v2/name/${value}`;
+      url = `https://restcountries.com/v2/name/${value}`;
     }
 
     setError(false);
@@ -41,12 +41,10 @@ const Main = ({ theme }) => {
   const filterByRegion = (e) => {
     const { value } = e.target;
 
-    axios
-      .get(`https://restcountries.eu/rest/v2/region/${value}`)
-      .then((res) => {
-        const countries = res.data;
-        setCountries(countries);
-      });
+    axios.get(`https://restcountries.com/v2/region/${value}`).then((res) => {
+      const countries = res.data;
+      setCountries(countries);
+    });
   };
 
   const displayCountries = () => {

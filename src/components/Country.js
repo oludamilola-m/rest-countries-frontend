@@ -8,7 +8,7 @@ const Country = ({ theme }) => {
   const [country, setCountry] = useState({});
   const { code } = useParams();
   useEffect(() => {
-    axios.get(`https://restcountries.eu/rest/v2/alpha/${code}`).then((res) => {
+    axios.get(`https://restcountries.com/v2/alpha/${code}`).then((res) => {
       setCountry(res.data);
     });
   }, [code]);
